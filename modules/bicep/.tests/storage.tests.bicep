@@ -28,7 +28,7 @@ module ok_storage_without_tag '../storage.bicep' = {
   name: 'storage-deployment-ok-without-tag'
   params: {
     location: location 
-    storageName: 'stblexin001'
+    storageName: 'stblexin002'
     minimumTlsVersion: 'TLS1_2'
     // tags: {
     //   environment: 'dev'
