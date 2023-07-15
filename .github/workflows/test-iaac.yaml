@@ -6,14 +6,21 @@ on:
     branches: [ "main" ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      name:
-        description: "Who to greet"
-        default: "World"
+    # inputs:
+    #   name:
+    #     description: "Who to greet"
+    #     default: "World"
 
 jobs:
-  hello:
+  analyze:
+    name: Analyze repository
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "Hello ${{ github.event.inputs.name }}"
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Run PSRule analysis
+      uses: Microsoft/ps-rule@v2.9.0
+      with:
+        modules: PsRule.Rules.Azure

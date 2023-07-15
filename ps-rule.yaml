@@ -1,0 +1,18 @@
+configuration:
+  AZURE_BICEP_FILE_EXPANSION: true
+
+input:
+  pathIgnore:
+    - 'modules/**/*.bicep'
+    - '!modules/**/*.tests.bicep'
+
+rule:
+  includeLocal: true
+  exclude:
+    - "Azure.ServiceBus.DisableLocalAuth"
+
+# Configure binding options
+binding:
+  targetType:
+  - 'resourceType'
+  - 'type'
