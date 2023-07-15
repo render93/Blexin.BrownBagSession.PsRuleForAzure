@@ -1,8 +1,10 @@
 param location string
-param tags object = {}
+param tags object
 param storageName string
 @allowed(['TLS1_0','TLS1_1','TLS1_2','TLS1_3'])
 param minimumTlsVersion string
+@allowed(['Hot','Cool','Premium'])
+param accessTier string = 'Hot'
 
 resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'blob${storageName}'
@@ -16,7 +18,7 @@ resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     supportsHttpsTrafficOnly: true
     minimumTlsVersion: minimumTlsVersion
     allowBlobPublicAccess: false
-    accessTier: 'Hot'
+    accessTier: accessTier
     networkAcls: {
       defaultAction: 'Deny'
     }
