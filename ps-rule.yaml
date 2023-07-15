@@ -6,8 +6,8 @@ input:
     - 'modules/**/*.bicep'
     - '!modules/**/*.tests.bicep'
 
-rule:
-  includeLocal: true
+# rule:
+#   includeLocal: true
 
 # Configure binding options
 binding:

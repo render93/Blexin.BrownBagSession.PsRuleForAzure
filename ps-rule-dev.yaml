@@ -18,7 +18,7 @@ binding:
   - 'resourceType'
   - 'type'
 
-# suppression means skip or ignore a rule for a specific case or use Suppression Group
-suppression:
-  Azure.Storage.MinTLS:
-    - stblexin002
+# suppression means skip or ignore a rule for a specific case or use Suppression Group?
+# suppression:
+#   Azure.Storage.MinTLS:
+#     - stblexin002
