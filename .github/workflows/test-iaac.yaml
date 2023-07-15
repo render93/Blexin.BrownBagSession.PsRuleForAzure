@@ -24,4 +24,4 @@ jobs:
       uses: Microsoft/ps-rule@v2.9.0
       with:
         modules: PsRule.Rules.Azure
-        option: ps-rule-dev.json
+        option: ps-rule-dev.yaml
