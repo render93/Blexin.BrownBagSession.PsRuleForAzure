@@ -25,11 +25,11 @@ module ok_storage_best_practices '../storage.bicep' = {
 // }
 
 module ok_storage_without_tag '../storage.bicep' = {
-  name: 'storage-deployment-fail'
+  name: 'storage-deployment-ok-without-tag'
   params: {
     location: location 
     storageName: 'documents001'
-    minimumTlsVersion: 'TLS1_1'
+    minimumTlsVersion: 'TLS1_2'
     // tags: {
     //   environment: 'dev'
     // }
