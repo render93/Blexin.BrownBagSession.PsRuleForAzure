@@ -6,9 +6,7 @@ param minimumTlsVersion string
 
 resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'blob${storageName}'
-  tags: union(tags, {
-    classification: 'general'
-  })
+  tags: tags
   location: location
   sku: {
     name: 'Standard_GRS'
