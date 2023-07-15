@@ -7,7 +7,7 @@ param minimumTlsVersion string
 param accessTier string = 'Hot'
 
 resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name: 'blob${storageName}'
+  name: storageName
   tags: tags
   location: location
   sku: {

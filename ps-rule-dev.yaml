@@ -11,13 +11,14 @@ rule:
   # exclude means disable the ruleand it is not used to test any Azure resources
   exclude:
     - "Azure.Resource.UseTags"
-  # suppression means skip or ignore a rule for a specific case or use Suppression Group
-  suppression:
-    Azure.Storage.MinTLS
-    - stblexin002
 
 # Configure binding options
 binding:
   targetType:
   - 'resourceType'
   - 'type'
+
+# suppression means skip or ignore a rule for a specific case or use Suppression Group
+suppression:
+  Azure.Storage.MinTLS:
+    - stblexin002
