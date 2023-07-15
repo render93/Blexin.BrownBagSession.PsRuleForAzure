@@ -1,5 +1,6 @@
 param location string = resourceGroup().location
 
+// test passed
 module ok_storage_best_practices '../storage.bicep' = {
   name: 'storage-deployment-ok'
   params: {
@@ -12,6 +13,7 @@ module ok_storage_best_practices '../storage.bicep' = {
   }
 }
 
+// test failed because of minimumTlsVersion
 module fail_storage_best_practices '../storage.bicep' = {
   name: 'storage-deployment-fail'
   params: {
@@ -24,6 +26,7 @@ module fail_storage_best_practices '../storage.bicep' = {
   }
 }
 
+// test passed only with ps-rul-dev.yaml option file
 module ok_storage_without_tag '../storage.bicep' = {
   name: 'storage-deployment-ok-without-tag'
   params: {
@@ -34,6 +37,7 @@ module ok_storage_without_tag '../storage.bicep' = {
   }
 }
 
+// test failed because of accessTier
 module fail_storage_no_hot_access '../storage.bicep' = {
   name: 'storage-deployment-fail-no-hot-access'
   params: {
