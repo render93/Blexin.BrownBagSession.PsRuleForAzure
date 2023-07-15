@@ -8,8 +8,6 @@ input:
 
 rule:
   includeLocal: true
-  exclude:
-    - "Azure.ServiceBus.DisableLocalAuth"
 
 # Configure binding options
 binding:

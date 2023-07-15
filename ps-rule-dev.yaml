@@ -9,7 +9,7 @@ input:
 rule:
   includeLocal: true
   exclude:
-    - "Azure.ServiceBus.DisableLocalAuth"
+    - "Azure.Resource.UseTags"
 
 # Configure binding options
 binding:
