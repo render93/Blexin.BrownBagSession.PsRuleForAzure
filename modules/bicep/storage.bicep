@@ -1,5 +1,5 @@
 param location string
-param tags object
+param tags object = {}
 param storageName string
 @allowed(['TLS1_0','TLS1_1','TLS1_2','TLS1_3'])
 param minimumTlsVersion string
