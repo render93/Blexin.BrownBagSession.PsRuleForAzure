@@ -34,6 +34,7 @@ jobs:
       uses: azure/powershell@v1
       with:
         inlineScript: |
+          Install-Module -Repository PSGallery -Name PSRule -Scope CurrentUser -Force;
           Get-AzContext
           Export-AzRuleData -OutputPath 'out/templates/'
           Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath 'out/templates/' -Format File -Option ${{ github.event.inputs.optionfile }}
