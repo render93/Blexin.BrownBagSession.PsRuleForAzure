@@ -19,7 +19,7 @@ jobs:
     # - name: Checkout
     #   uses: actions/checkout@v3
 
-    - name: Run PSRule analysis
+    - name: Install PSRule
       uses: Microsoft/ps-rule@v2.9.0
       with:
         modules: PsRule.Rules.Azure
@@ -30,18 +30,18 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         enable-AzPSSession: true
 
-    - name: Run PSRule analysis In-Flight
+    - name: Get arm templates from resource group
       uses: azure/powershell@v1
       with:
         inlineScript: |
           Get-AzContext
-          Export-AzRuleData -OutputPath 'out/templates/'
+          Export-AzRuleData -OutputPath 'out/templates/' -Debug
         azPSVersion: 'latest'
 
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Run PSRule analysis
+    - name: Run PSRule analysis In-Flight
       uses: Microsoft/ps-rule@v2.9.0
       with:
         modules: PsRule.Rules.Azure
