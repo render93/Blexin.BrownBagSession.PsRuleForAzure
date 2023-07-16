@@ -35,7 +35,8 @@ jobs:
       with:
         inlineScript: |
           Get-AzContext
-          Export-AzRuleData -OutputPath 'out/templates/' -Debug
+          Export-AzRuleData -OutputPath 'out/templates/'
+          Get-Error;
         azPSVersion: 'latest'
 
     - name: Checkout
