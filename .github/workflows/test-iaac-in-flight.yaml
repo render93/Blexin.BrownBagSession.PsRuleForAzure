@@ -25,5 +25,6 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az account show
-          az storage -h
+          Get-AzContext
+          Export-AzRuleData -OutputPath 'out/templates/'
+          Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath 'out/templates/' -Format File -Option .\ps-rule-inflight.yaml
