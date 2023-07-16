@@ -9,7 +9,7 @@ on:
     inputs:
       optionfile:
         description: "The path to an options file"
-        default: "ps-rule-dev.yaml"
+        default: "ps-rule-inflight.yaml"
 
 jobs:
   analyze:
@@ -27,4 +27,4 @@ jobs:
         inlineScript: |
           Get-AzContext
           Export-AzRuleData -OutputPath 'out/templates/'
-          Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath 'out/templates/' -Format File -Option .\ps-rule-inflight.yaml
+          Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath 'out/templates/' -Format File -Option ${{ github.event.inputs.optionfile }}
