@@ -22,7 +22,12 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         enable-AzPSSession: true
 
-    - name: Run Azure PowerShell script
+    - name: Analyze Azure template files
+      uses: microsoft/ps-rule@v2.9.0
+      with:
+        modules: 'PSRule.Rules.Azure'
+
+    - name: Run PSRule analysis In-Flight
       uses: azure/powershell@v1
       with:
         inlineScript: |
