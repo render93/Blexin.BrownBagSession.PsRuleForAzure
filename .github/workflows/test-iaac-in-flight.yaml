@@ -29,3 +29,4 @@ jobs:
           Get-AzContext
           Export-AzRuleData -OutputPath 'out/templates/'
           Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath 'out/templates/' -Format File -Option ${{ github.event.inputs.optionfile }}
+        azPSVersion: 'latest'
