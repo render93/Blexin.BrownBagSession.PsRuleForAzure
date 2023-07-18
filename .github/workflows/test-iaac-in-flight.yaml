@@ -39,10 +39,8 @@ jobs:
         inlineScript: |
           Get-AzContext
           Write-host "Get-AzContext executed"
-          $error.clear();
           Export-AzRuleData -OutputPath .
           Write-host "Export-AzRuleData executed"
-          $error;
           ls
         azPSVersion: 'latest'
 
@@ -51,4 +49,4 @@ jobs:
       with:
         modules: PsRule.Rules.Azure
         option: ${{ github.event.inputs.optionfile }}
-        inputPath: 'out/templates/'
+        # inputPath: 'out/templates/'
