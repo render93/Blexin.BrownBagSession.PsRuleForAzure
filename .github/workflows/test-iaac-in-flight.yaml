@@ -30,6 +30,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         enable-AzPSSession: true
 
+    - name: Checkout
+      uses: actions/checkout@v3
+
     - name: Get arm templates from resource group
       uses: azure/powershell@v1
       with:
@@ -37,11 +40,9 @@ jobs:
           Get-AzContext
           $error.clear();
           Export-AzRuleData -OutputPath 'out/templates/'
+          
           $error;
         azPSVersion: 'latest'
-
-    - name: Checkout
-      uses: actions/checkout@v3
 
     - name: Run PSRule analysis In-Flight
       uses: Microsoft/ps-rule@v2.9.0
