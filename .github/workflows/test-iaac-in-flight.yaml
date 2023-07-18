@@ -38,8 +38,10 @@ jobs:
       with:
         inlineScript: |
           Get-AzContext
+          Write-host "Get-AzContext executed"
           $error.clear();
           Export-AzRuleData -OutputPath 'out/templates/'
+          Write-host "Export-AzRuleData"
           
           $error;
         azPSVersion: 'latest'
