@@ -16,13 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    # - name: Checkout
-    #   uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
 
     - name: Install PSRule
       uses: Microsoft/ps-rule@v2.9.0
       with:
         modules: PsRule.Rules.Azure
+        option: ${{ github.event.inputs.optionfile }}
 
     - name: Azure Login
       uses: azure/login@v1
@@ -30,8 +31,8 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         enable-AzPSSession: true
 
-    - name: Checkout
-      uses: actions/checkout@v3
+    # - name: Checkout
+    #   uses: actions/checkout@v3
 
     - name: Get arm templates from resource group
       uses: azure/powershell@v1
