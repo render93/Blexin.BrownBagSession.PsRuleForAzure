@@ -3,7 +3,7 @@ configuration:
 
 input:
   pathIgnore:
-    - 'modules'
+    - 'modules/'
 
 # rule:
 #   includeLocal: true
