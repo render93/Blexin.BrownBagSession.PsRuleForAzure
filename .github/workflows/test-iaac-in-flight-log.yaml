@@ -51,5 +51,5 @@ jobs:
         inputType: inputPath
         inputPath: 'out/templates/*.json'
       env:
-        PSRULE_CONFIGURATION_MONITOR_WORKSPACE_ID: ${{ secrets.MONITOR_WORKSPACE_ID }}
+        PSRULE_CONFIGURATION_MONITOR_WORKSPACE_ID: ${{ vars.MONITOR_WORKSPACE_ID }}
         PSRULE_CONFIGURATION_MONITOR_WORKSPACE_KEY: ${{ secrets.MONITOR_WORKSPACE_KEY }}
