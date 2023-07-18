@@ -23,6 +23,7 @@ jobs:
       uses: Microsoft/ps-rule@v2.9.0
       with:
         modules: PsRule.Rules.Azure
+        option: ${{ github.event.inputs.optionfile }}
 
     - name: Azure Login
       uses: azure/login@v1
@@ -38,10 +39,7 @@ jobs:
       with:
         inlineScript: |
           Get-AzContext
-          Write-host "Get-AzContext executed"
           Export-AzRuleData -OutputPath .
-          Write-host "Export-AzRuleData executed"
-          ls
         azPSVersion: 'latest'
 
     - name: Run PSRule analysis In-Flight
@@ -49,4 +47,3 @@ jobs:
       with:
         modules: PsRule.Rules.Azure
         option: ${{ github.event.inputs.optionfile }}
-        # inputPath: 'out/templates/'
