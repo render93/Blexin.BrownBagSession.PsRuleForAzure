@@ -39,7 +39,7 @@ jobs:
       with:
         inlineScript: |
           Get-AzContext
-          Export-AzRuleData -OutputPath .
+          Export-AzRuleData -OutputPath 'out/templates/'
           ls
         azPSVersion: 'latest'
 
@@ -48,3 +48,4 @@ jobs:
       with:
         modules: PsRule.Rules.Azure
         option: ${{ github.event.inputs.optionfile }}
+        inputPath: 'out/templates/'
