@@ -3,8 +3,7 @@ configuration:
 
 input:
   pathIgnore:
-    - 'modules/**/*.bicep'
-    - '!modules/**/*.tests.bicep'
+    - 'modules'
 
 # rule:
 #   includeLocal: true
