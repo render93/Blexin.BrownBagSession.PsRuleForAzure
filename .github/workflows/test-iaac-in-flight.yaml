@@ -48,4 +48,5 @@ jobs:
       with:
         modules: PsRule.Rules.Azure
         option: ${{ github.event.inputs.optionfile }}
-        inputPath: 'out/templates/'
+        inputType: inputPath
+        inputPath: 'out/templates/*.json'
