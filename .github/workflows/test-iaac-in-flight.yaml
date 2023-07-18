@@ -39,8 +39,7 @@ jobs:
       with:
         inlineScript: |
           Get-AzContext
-          Export-AzRuleData -OutputPath 'out/templates/'
-          ls
+          Export-AzRuleData -ResourceGroupName 'rg-psruleforazure' -OutputPath 'out/templates/'
         azPSVersion: 'latest'
 
     - name: Run PSRule analysis In-Flight
