@@ -40,10 +40,10 @@ jobs:
           Get-AzContext
           Write-host "Get-AzContext executed"
           $error.clear();
-          Export-AzRuleData -OutputPath 'out/templates/'
-          Write-host "Export-AzRuleData"
-          
+          Export-AzRuleData -OutputPath .
+          Write-host "Export-AzRuleData executed"
           $error;
+          ls
         azPSVersion: 'latest'
 
     - name: Run PSRule analysis In-Flight
