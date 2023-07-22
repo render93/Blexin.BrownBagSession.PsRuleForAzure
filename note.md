@@ -6,3 +6,9 @@ aggiunta esclusione regola e (TODO: suppression)
 
 aggiunte regole personalizzate
   Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath '.\modules\bicep\' -Format File -Option .\ps-rule3.yaml
+
+validazione in-flight
+
+validazione pre-flight
+cd "C:\Lavoro\Blexin\Blexin.BrownBagSession.PsRuleForAzure"
+az deployment group create --resource-group rg-psruleforazure --name rollout01 --template-file .\modules\bicep\route-table.bicep
