@@ -10,7 +10,7 @@ input:
 #   includeLocal: true
 
 # Configure binding options
-binding:
-  targetType:
-  - 'resourceType'
-  - 'type'
+# binding:
+#   targetType:
+#   - 'resourceType'
+#   - 'type'

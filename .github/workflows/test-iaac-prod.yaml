@@ -20,3 +20,5 @@ jobs:
       uses: Microsoft/ps-rule@v2.9.0
       with:
         modules: PsRule.Rules.Azure
+
+        #https://github.com/janegilring/PSRule.Rules.Azure-quickstart
