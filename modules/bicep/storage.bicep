@@ -5,13 +5,15 @@ param storageName string
 param minimumTlsVersion string
 @allowed(['Hot','Cool','Premium'])
 param accessTier string = 'Hot'
+@allowed(['Premium_LRS', 'Premium_ZRS' , 'Standard_GRS' , 'Standard_GZRS' , 'Standard_LRS' , 'Standard_RAGRS' , 'Standard_RAGZRS' , 'Standard_ZRS'])
+param skuName string = 'Standard_GRS'
 
 resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageName
   tags: tags
   location: location
   sku: {
-    name: 'Standard_GRS'
+    name: skuName
   }
   kind: 'StorageV2'
   properties: {
