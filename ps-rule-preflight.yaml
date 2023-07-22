@@ -3,4 +3,5 @@ configuration:
 
 input:
   pathIgnore:
-    - 'modules/'
+    - 'modules/**/*.bicep'
+    - '!modules/bicep/route-table.bicep'
