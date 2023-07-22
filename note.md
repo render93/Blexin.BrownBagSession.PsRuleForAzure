@@ -8,7 +8,8 @@ aggiunte regole personalizzate
   Assert-PSRule -Module 'PSRule.Rules.Azure' -InputPath '.\modules\bicep\' -Format File -Option .\ps-rule3.yaml
 
 validazione in-flight
+  far vedere log analytics 
 
 validazione pre-flight
-cd "C:\Lavoro\Blexin\Blexin.BrownBagSession.PsRuleForAzure"
-az deployment group create --resource-group rg-psruleforazure --name rollout01 --template-file .\modules\bicep\route-table.bicep
+  lanciare action con errore in nome risorsa => action fallisce
+  lanciare action con nome corretto = action ok + creazione risorsa
