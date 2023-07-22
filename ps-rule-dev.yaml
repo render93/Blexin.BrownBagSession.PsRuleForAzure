@@ -1,0 +1,24 @@
+configuration:
+  AZURE_BICEP_FILE_EXPANSION: true
+
+input:
+  pathIgnore:
+    - 'modules/**/*.bicep'
+    - '!modules/**/*.tests.bicep'
+
+rule:
+  includeLocal: true
+  # exclude means disable the ruleand it is not used to test any Azure resources
+  exclude:
+    - "Azure.Resource.UseTags"
+
+# Configure binding options
+binding:
+  targetType:
+  - 'resourceType'
+  - 'type'
+
+# suppression means skip or ignore a rule for a specific case
+# suppression:
+#   Azure.Storage.MinTLS:
+#     - stblexin002

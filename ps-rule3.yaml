@@ -1,0 +1,17 @@
+configuration:
+  AZURE_BICEP_FILE_EXPANSION: true
+
+input:
+  pathIgnore:
+    - 'modules/**/*.bicep'
+    - '!modules/**/storage3.tests.bicep'
+
+# Enable custom rules that doen't exist in the baseline
+rule:
+  includeLocal: true
+
+# Configure binding options
+binding:
+  targetType:
+  - 'resourceType'
+  - 'type'
