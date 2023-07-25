@@ -16,7 +16,7 @@ module fail_storage_with_bad_tls_version '../storage.bicep' = {
   params: {
     location: location 
     storageName: 'stblexin002'
-    minimumTlsVersion: 'TLS1_1'
+    minimumTlsVersion: 'TLS1_1' // bad tls version
     tags: {}
   }
 }
@@ -27,7 +27,7 @@ module pass_storage_with_bad_tls_version '../storage.bicep' = {
   params: {
     location: location 
     storageName: 'stblexin003'
-    minimumTlsVersion: 'TLS1_1'
+    minimumTlsVersion: 'TLS1_1' // bad tls version but excluded in configuration file
     tags: {}
   }
 }

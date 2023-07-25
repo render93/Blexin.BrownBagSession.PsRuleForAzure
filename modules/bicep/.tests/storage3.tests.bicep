@@ -53,3 +53,17 @@ module pass_storage_right_sku_prod '../storage.bicep' = {
     accessTier: 'Hot'
   }
 }
+
+module pass_storage_right_sku_qa '../storage.bicep' = {
+  name: 'storage-deployment-pass-right-sku-qa'
+  params: {
+    location: location 
+    storageName: 'stblexin005'
+    minimumTlsVersion: 'TLS1_2'
+    skuName: 'Standard_GZRS' // pass
+    tags: {
+      environment: 'qa'
+    }
+    accessTier: 'Hot'
+  }
+}
